@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.WebAPI_net6", "EFCore.WebAPI_net6\EFCore.WebAPI_net6.csproj", "{C6A5CC6D-1088-44FB-8225-B51E31220640}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6A5CC6D-1088-44FB-8225-B51E31220640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A5CC6D-1088-44FB-8225-B51E31220640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A5CC6D-1088-44FB-8225-B51E31220640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A5CC6D-1088-44FB-8225-B51E31220640}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

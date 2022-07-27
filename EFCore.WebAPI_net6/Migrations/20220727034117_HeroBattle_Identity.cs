@@ -1,0 +1,115 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace EFCore.WebAPI_net6.Migrations
+{
+    /// <inheritdoc />
+    public partial class HeroBattle_Identity : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            // Aqui vao ser os drops dos campos que removemos
+            migrationBuilder.DropForeignKey(
+                name: "FK_Heros_Battles_BattleId",
+                table: "Heros");
+
+            migrationBuilder.DropIndex(
+                name: "IX_Heros_BattleId",
+                table: "Heros");
+
+            migrationBuilder.DropColumn(
+                name: "BattleId",
+                table: "Heros");
+    
+            // Depois dos drops ele vai criar a nova tabela de heroisbatalhas
+            migrationBuilder.CreateTable(
+                name: "HerosBattles",
+                columns: table => new
+                {
+                    HeroId = table.Column<int>(type: "int", nullable: false),
+                    BattleId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    // irá adicionar as duas foreigkeys de batalha e heroi
+                    // e a primary key dele é a que criamos no db context
+                    table.PrimaryKey("PK_HerosBattles", x => new { x.BattleId, x.HeroId });
+                    table.ForeignKey(
+                        name: "FK_HerosBattles_Battles_BattleId",
+                        column: x => x.BattleId,
+                        principalTable: "Battles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_HerosBattles_Heros_HeroId",
+                        column: x => x.HeroId,
+                        principalTable: "Heros",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SecretIdentities",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RealName = table.Column<int>(type: "int", nullable: false),
+                    HeroId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SecretIdentities", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SecretIdentities_Heros_HeroId",
+                        column: x => x.HeroId,
+                        principalTable: "Heros",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HerosBattles_HeroId",
+                table: "HerosBattles",
+                column: "HeroId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SecretIdentities_HeroId",
+                table: "SecretIdentities",
+                column: "HeroId",
+                unique: true);
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "HerosBattles");
+
+            migrationBuilder.DropTable(
+                name: "SecretIdentities");
+
+            migrationBuilder.AddColumn<int>(
+                name: "BattleId",
+                table: "Heros",
+                type: "int",
+                nullable: false,
+                defaultValue: 0);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Heros_BattleId",
+                table: "Heros",
+                column: "BattleId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Heros_Battles_BattleId",
+                table: "Heros",
+                column: "BattleId",
+                principalTable: "Battles",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
+        }
+    }
+}
