@@ -957,6 +957,36 @@
             "rid": "win"
           }
         }
+      },
+      "EFCore.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/EFCore.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EFCore.Domain.dll": {}
+        }
+      },
+      "EFCore.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EFCore.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.0-preview.6.22329.4",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.0-preview.6.22329.4",
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.0-preview.6.22329.4",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0-preview.6.22329.4",
+          "Microsoft.Extensions.Caching.Memory": "7.0.0-preview.6.22324.4",
+          "Microsoft.Extensions.DependencyInjection": "7.0.0-preview.6.22324.4",
+          "Microsoft.Extensions.Logging": "7.0.0-preview.6.22324.4"
+        },
+        "compile": {
+          "bin/placeholder/EFCore.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EFCore.Repository.dll": {}
+        }
       }
     }
   },
@@ -3263,10 +3293,22 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "EFCore.Domain/1.0.0": {
+      "type": "project",
+      "path": "../EFCore.Domain/EFCore.Domain.csproj",
+      "msbuildProject": "../EFCore.Domain/EFCore.Domain.csproj"
+    },
+    "EFCore.Repository/1.0.0": {
+      "type": "project",
+      "path": "../EFCore.Repository/EFCore.Repository.csproj",
+      "msbuildProject": "../EFCore.Repository/EFCore.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "EFCore.Domain >= 1.0.0",
+      "EFCore.Repository >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.0-preview.6.22329.4",
       "Microsoft.EntityFrameworkCore.Abstractions >= 7.0.0-preview.6.22329.4",
       "Microsoft.EntityFrameworkCore.Analyzers >= 7.0.0-preview.6.22329.4",
@@ -3305,7 +3347,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\projects\\personal\\dotNet\\EntityFrameworkCore_Udemy\\EFCore.WebAPI_net6\\EFCore.Domain\\EFCore.Domain.csproj": {
+              "projectPath": "C:\\projects\\personal\\dotNet\\EntityFrameworkCore_Udemy\\EFCore.WebAPI_net6\\EFCore.Domain\\EFCore.Domain.csproj"
+            },
+            "C:\\projects\\personal\\dotNet\\EntityFrameworkCore_Udemy\\EFCore.WebAPI_net6\\EFCore.Repository\\EFCore.Repository.csproj": {
+              "projectPath": "C:\\projects\\personal\\dotNet\\EntityFrameworkCore_Udemy\\EFCore.WebAPI_net6\\EFCore.Repository\\EFCore.Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

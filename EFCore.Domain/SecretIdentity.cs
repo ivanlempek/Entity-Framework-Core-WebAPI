@@ -1,4 +1,4 @@
-﻿namespace EFCore.WebAPI_net6.Models
+﻿namespace EFCore.Domain
 {
     // Classe da identidade secreta de um heroi
     // Que ele pode ter ou não

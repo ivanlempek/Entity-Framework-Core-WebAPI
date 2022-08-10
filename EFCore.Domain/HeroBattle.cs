@@ -1,4 +1,4 @@
-﻿namespace EFCore.WebAPI_net6.Models
+﻿namespace EFCore.Domain
 {
     public class HeroBattle
     {

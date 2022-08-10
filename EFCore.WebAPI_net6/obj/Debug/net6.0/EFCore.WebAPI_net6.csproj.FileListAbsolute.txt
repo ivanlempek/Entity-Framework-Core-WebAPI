@@ -74,3 +74,7 @@ C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.
 C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.WebAPI_net6\obj\Debug\net6.0\EFCore.WebAPI_net6.pdb
 C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.WebAPI_net6\obj\Debug\net6.0\EFCore.WebAPI_net6.genruntimeconfig.cache
 C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.WebAPI_net6\obj\Debug\net6.0\ref\EFCore.WebAPI_net6.dll
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.WebAPI_net6\bin\Debug\net6.0\EFCore.Domain.dll
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.WebAPI_net6\bin\Debug\net6.0\EFCore.Repository.dll
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.WebAPI_net6\bin\Debug\net6.0\EFCore.Domain.pdb
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.WebAPI_net6\bin\Debug\net6.0\EFCore.Repository.pdb

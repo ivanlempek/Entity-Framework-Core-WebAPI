@@ -25,4 +25,9 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\EFCore.Domain\EFCore.Domain.csproj" />
+      <ProjectReference Include="..\EFCore.Repository\EFCore.Repository.csproj" />
+    </ItemGroup>
+
 </Project>

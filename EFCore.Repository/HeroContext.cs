@@ -1,11 +1,18 @@
-﻿using EFCore.WebAPI_net6.Models;
+﻿using EFCore.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCore.WebAPI_net6.Data
+namespace EFCore.Repository
 {
     // O DBContext é o que vai encapsular/mapear todas as nossas entidades do banco
     public class HeroContext : DbContext
     {
+        // Vou criar aqui um construtor vazio pq o gênio do udemy não sabe o q ta fazendo
+        /*
+        public HeroContext()
+        {
+            
+        }
+        */
         // Quando vc cria uma classe / entidade lista ela precisa ficar no plural
         // Por que por via de regra elas já vão ser identificadas como listas sem precisar ver o tipo
         // Outro motivo seria que todas as nossas entidades do banco vão ser criadas com esses mesmos nomes, por isso o plural
