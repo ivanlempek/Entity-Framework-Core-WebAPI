@@ -1,0 +1,17 @@
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\bin\Debug\net6.0\EFCore.Repository.deps.json
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\bin\Debug\net6.0\EFCore.Repository.runtimeconfig.json
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\bin\Debug\net6.0\EFCore.Repository.dll
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\bin\Debug\net6.0\EFCore.Repository.pdb
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\bin\Debug\net6.0\EFCore.Domain.dll
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\bin\Debug\net6.0\EFCore.Domain.pdb
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\obj\Debug\net6.0\EFCore.Repository.csproj.AssemblyReference.cache
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\obj\Debug\net6.0\EFCore.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\obj\Debug\net6.0\EFCore.Repository.AssemblyInfoInputs.cache
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\obj\Debug\net6.0\EFCore.Repository.AssemblyInfo.cs
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\obj\Debug\net6.0\EFCore.Repository.csproj.CoreCompileInputs.cache
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\obj\Debug\net6.0\EFCore.Repository.csproj.CopyComplete
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\obj\Debug\net6.0\EFCore.Repository.dll
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\obj\Debug\net6.0\refint\EFCore.Repository.dll
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\obj\Debug\net6.0\EFCore.Repository.pdb
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\obj\Debug\net6.0\EFCore.Repository.genruntimeconfig.cache
+C:\projects\personal\dotNet\EntityFrameworkCore_Udemy\EFCore.WebAPI_net6\EFCore.Repository\obj\Debug\net6.0\ref\EFCore.Repository.dll
