@@ -6,6 +6,7 @@ using System.Linq;
 using EFCore.Domain;
 using EFCore.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace EFCore.WebAPI_net6.Controllers
@@ -39,8 +40,19 @@ namespace EFCore.WebAPI_net6.Controllers
                     select hero).ToList();*/
 
                 // Fazendo o get com lambda expression
+                // o .ToList vai retornar todos os registros do banco de dados
                 var listHeroName = context.Heros.Where(h => h.Name.Contains(name)).ToList();
-                return Ok(listHeroName);
+                // Fazendo o get com o Like do EntityFramework
+                // O orderBy vai retornar a lista de heróis por Id - podendo ser de forma descendente: OrderByDescending (que seria o último)
+                // O FirtOrDefault retorna o primeiro da lista no banco de dados, ou seja, apenas um elemento do banco
+                var listHeroi2 = context.Heros.Where(h => EF.Functions.Like(h.Name, $"%{name}%"))
+                    .OrderByDescending(h => h.Id)
+                    .FirstOrDefault();
+                // Método para retornar somente um elemento da lista ( primeiro ) - se ele encontrar mais de um elemento ele irá levantar uma exceção (erro)
+                //  .SingleOrDeafult(); 
+                // Método para retornar o último elemento da lista  de Id's
+                //  .LastOrDefault();
+                return Ok(listHeroi2);
 
                 // Um detalhe é que sempre que terminamos de usar o ToList a conexão com o banco é fechada
                 // Para executar várias funções sem interromper a conexão é bom usar um foreach
