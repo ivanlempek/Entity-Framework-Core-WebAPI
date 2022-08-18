@@ -114,8 +114,9 @@ namespace EFCore.Repository.Migrations
                     b.Property<int>("HeroId")
                         .HasColumnType("int");
 
-                    b.Property<int>("RealName")
-                        .HasColumnType("int");
+                    b.Property<string>("RealName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -177,8 +178,7 @@ namespace EFCore.Repository.Migrations
 
                     b.Navigation("HerosBattles");
 
-                    b.Navigation("Identity")
-                        .IsRequired();
+                    b.Navigation("Identity");
                 });
 #pragma warning restore 612, 618
         }

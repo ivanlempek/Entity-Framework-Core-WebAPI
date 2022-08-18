@@ -11,6 +11,6 @@ namespace EFCore.Domain
         public DateTime DtBegining { get; set; }
         public DateTime DtEnd { get; set; }
         // Agora iremos fazer o mesmo relacionamento feito em herois aqui em batalha
-        public List<HeroBattle> HerosBattles { get; set; }
+        public List<HeroBattle>? HerosBattles { get; set; }
     }
 }

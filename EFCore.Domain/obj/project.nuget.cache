@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "lzbgzPQpOG1c440ke7X3wZ4A7BPp5vr6V7pD57gsgOYYBu+PlxqmhlKyCoTQgEEbYZTd3k3oKHpqj6w8L8zgxA==",
+  "dgSpecHash": "VhS6VnQHDlZ6LqNgCV6Uyv7J6dt9QXo/JN52OqfhRn+gqE9TzDizty+6U1YKm+fxKDNW+WqOEr9ded1cqHirgw==",
   "success": true,
   "projectFilePath": "C:\\projects\\personal\\dotNet\\EntityFrameworkCore_Udemy\\EFCore.WebAPI_net6\\EFCore.Domain\\EFCore.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Ivan\\.nuget\\packages\\newtonsoft.json\\13.0.2-beta1\\newtonsoft.json.13.0.2-beta1.nupkg.sha512",
+    "C:\\Users\\Ivan\\.nuget\\packages\\newtonsoftjsonserializerresolver\\1.0.0\\newtonsoftjsonserializerresolver.1.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
