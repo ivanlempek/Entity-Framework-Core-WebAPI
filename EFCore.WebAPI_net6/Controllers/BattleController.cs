@@ -7,6 +7,7 @@ using EFCore.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace EFCore.WebAPI_net6.Controllers
 {
@@ -14,13 +15,22 @@ namespace EFCore.WebAPI_net6.Controllers
     [ApiController]
     public class BattleController : ControllerBase
     {
+        // Criamos aqui o contexto com a interface
+        private readonly IEfCoreRepository _repo;
+
+        public BattleController(IEfCoreRepository repo)
+        {
+            _repo = repo;
+        }
+
         // GET: api/Battle
         [HttpGet]
-        public ActionResult Get()
+        public async Task<IActionResult> Get()
         {
             try
             {
-                return Ok(new Battle());
+                var heros = await _repo.GetAllBattles(incluirBatalha: true);
+                return Ok(heros);
             }
             catch (Exception ex)
             {
@@ -29,25 +39,13 @@ namespace EFCore.WebAPI_net6.Controllers
         }
 
         // GET: api/Battle/5
-        [HttpGet, Route("[controller]/Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/Battle
-        [HttpPost]
-        public ActionResult Post(Battle model)
+        [HttpGet("{id}", Name = "GetBattle")]
+        public async Task<IActionResult>Get(int id)
         {
             try
             {
-                using (var context = new HeroContext())
-                {
-                    context.Battles.Add(model);
-                    context.SaveChanges();
-
-                    return Ok("Batalha adicionada com sucesso!");
-                }
+                var heros = await _repo.GetBattleById(id, true);
+                return Ok(heros);
             }
             catch (Exception ex)
             {
@@ -55,28 +53,73 @@ namespace EFCore.WebAPI_net6.Controllers
             }
         }
 
+        // POST: api/Battle
+        [HttpPost]
+        public async Task<IActionResult> Post(Battle model)
+        {
+            try
+            {
+                /*using (var context = new HeroContext())
+                {
+                    context.Battles.Add(model);
+                    context.SaveChanges();*/
+                _repo.Add(model);
+
+                if (await _repo.SaveChangeAsync())
+                {
+                    return Ok("Batalha adicionada com sucesso!");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex}");
+            }
+
+            return BadRequest("Não foi possível salvar a Batalha.");
+        }
+
         // PUT: api/Battle/5
         [HttpPut("{id}")]
-        public ActionResult Put(int id, Battle model)
+        public async Task<IActionResult> Put(int id, Battle model)
         {
-            using (var context = new HeroContext())
+            try
             {
-                if (context.Battles.AsNoTracking().FirstOrDefault(b => b.Id == id) != null)
+                var hero = await _repo.GetBattleById(id);
+                if (hero != null)
                 {
-                    context.Update(model);
-                    context.SaveChanges();
+                    _repo.Update(model);
+                    if(await _repo.SaveChangeAsync()) 
 
-                    return Ok("Batalha atualizada com sucesso!!");
+                        return Ok("Objeto atualizado com sucesso!!!");
                 }
-
-                return Ok("Batalha não encontrada!!");
             }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex}");
+            }
+            return BadRequest($"Não deletado!");
         }
-        
+
         // DELETE: api/Battle/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            try
+            {
+                var hero = await _repo.GetBattleById(id);
+                if (hero != null)
+                {
+                    _repo.Delete(hero);
+                   if(await _repo.SaveChangeAsync()) 
+
+                    return Ok("Objeto deletado com sucesso!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex}");
+            }
+            return BadRequest($"Não deletado!");
         }
     }
 }
